@@ -5,7 +5,7 @@
 // Inisialisasi LCD I2C dengan alamat 0x27 dan ukuran 20x4
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
-// Pin servo
+//Pin servo
 #define SERVO1_PIN 9  // Servo untuk buah masak
 #define SERVO2_PIN 10 // Servo untuk buah mentah
 #define S0 4
