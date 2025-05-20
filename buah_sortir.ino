@@ -2,7 +2,7 @@
 #include <LiquidCrystal_I2C.h>
 #include <Servo.h>
 
-// Inisialisasi LCD I2C dengan alamat 0x27 dan ukuran 20x4
+//Inisialisasi LCD I2C dengan alamat 0x27 dan ukuran 20x4
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 //Pin servo
