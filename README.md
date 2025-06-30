@@ -1,4 +1,4 @@
-/*
+
  * 🍎 Mesin Penyortir Apel Otomatis
  * --------------------------------
  * Proyek ini mengimplementasikan sistem otomatis menggunakan Arduino 
