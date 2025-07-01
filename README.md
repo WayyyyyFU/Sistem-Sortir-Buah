@@ -1,84 +1,125 @@
-  🍎 Mesin Penyortir Apel Otomatis
-  --------------------------------
-  Proyek ini mengimplementasikan sistem otomatis menggunakan Arduino 
-  untuk menyortir apel berdasarkan warnanya (Merah, Kuning, Hijau, Merah Jambu) 
-  menggunakan sensor warna TCS3200, motor servo untuk gerbang penyortiran, 
-  dan layar LCD untuk menampilkan jumlah.
- 
-  🌟 Fitur:
-  - Penyortiran Berdasarkan Warna (Merah, Kuning, Hijau, Merah Jambu)
-  - Penghitungan Real-time di LCD I2C
-  - Kontrol Konveyor Otomatis via Relay
-  - Desain Modular untuk kalibrasi warna dan servo
-  - Debugging Serial
- 
-  🛠️ Perangkat Keras:
-  - Arduino Uno
-  - Sensor TCS3200
-  - 4x Servo SG90
-  - LCD I2C 16x2 / 20x4
-  - Relay 1 channel
-  - Sistem Konveyor (eksternal)
-  - Breadboard, kabel jumper, dan catu daya eksternal
- 
-  🔌 Wiring (Arduino UNO):
-  - TCS3200: S0(4), S1(5), S2(6), S3(7), OUT(8)
-  - Servo Merah (9), Hijau (10), Kuning (2), Pink (3)
-  - Relay Konveyor: IN (12)
-  - LCD I2C: SDA (A4), SCL (A5)
- 
-  💻 Software:
-  - Arduino IDE terbaru
-  - Library: LiquidCrystal_I2C, Servo
- 
-  🚀 Langkah Penggunaan:
-  1. Upload kode ke Arduino
-  2. Hubungkan seluruh perangkat keras
-  3. Nyalakan sistem
-  4. Gunakan Serial Monitor untuk kalibrasi warna apel
-  5. Atur ambang batas R, G, B untuk tiap warna
-  6. Atur sudut servo dan delay penyortiran
- 
-  🧪 Contoh Kalibrasi:
-  - Apel Merah: R > 900, G > 1500, B < 1800
-  - Apel Hijau: R < 900, G > 2000, B < 2000
-  - Apel Kuning: R > 1000, G > 1700, B < 1600
-  - Apel Merah Jambu: R > 1000, G < 1500, B > 1700
- 
- 📜 Cara Penggunaan Kode
-  Untuk menjalankan sistem penyortir apel otomatis dengan benar, ikuti panduan berikut:
+# 🍎 Mesin Penyortir Apel Otomatis dengan Arduino
 
-  1️⃣ Persiapan Software
-  Pastikan Arduino IDE versi terbaru telah terinstal.
-  Buka Arduino IDE.
-  Tambahkan library berikut jika belum ada:
-  LiquidCrystal_I2C (untuk LCD I2C)
-  Servo (untuk mengontrol motor servo)
-  Tambahkan library melalui Sketch > Include Library > Manage Libraries...
-  
-  2️⃣ Buka dan Unggah Kode
-  Buka file .ino kode proyek ini di Arduino IDE.
-  Pilih board: Arduino Uno
-  Pilih port COM yang sesuai: Tools > Port
-  Klik Upload (✔) untuk mengunggah program ke Arduino.
+Proyek ini mengimplementasikan sistem otomatis menggunakan Arduino untuk menyortir apel berdasarkan warnanya (Merah, Kuning, Hijau, Merah Jambu) menggunakan sensor warna **TCS3200**, motor **servo** untuk gerbang penyortiran, **relay** untuk konveyor, dan **LCD I2C** untuk menampilkan jumlah apel tersortir secara *real-time*.
 
-  3️⃣ Hubungkan Perangkat Keras
-  Rakit dan hubungkan seluruh komponen sesuai dengan bagian 🔌 Wiring (Arduino UNO).
-  Pastikan semua koneksi kabel aman dan tegangan sesuai.
+![Gambar Proyek Anda Disini](https://via.placeholder.com/600x400.png?text=Letakkan+Foto+Proyek+Anda+di+Sini)  
+*(Contoh gambar: Tampilan alat yang sudah jadi)*
 
-  4️⃣ Gunakan Serial Monitor untuk Kalibrasi
-  Buka Serial Monitor di Arduino IDE (Ctrl + Shift + M
-  Letakkan apel di bawah sensor warna TCS3200 satu per satu.
-  Catat nilai RGB yang muncul di Serial Monitor.
-  Sesuaikan batas RGB di bagian kode ini:
-  
-  if (R > 900 && G > 1500 && B < 1800) {
-  // apel merah
-  }
+---
 
-  🤝 Kontribusi:
-  Fork, issue, dan pull request dipersilakan!
- 
-  📄 Lisensi:
-  MIT License - bebas digunakan untuk tujuan edukasi dan komersial.
- */
+## ✨ Fitur Utama
+
+- **Penyortiran Otomatis Berdasarkan Warna**: Mendeteksi dan memisahkan apel merah, kuning, hijau, dan pink.
+- **LCD Real-time Counter**: Menampilkan jumlah apel tersortir pada masing-masing warna.
+- **Kontrol Konveyor Otomatis**: Menggunakan **relay** untuk menghidupkan atau mematikan konveyor.
+- **Debug Serial**: Untuk kalibrasi dan pengujian warna secara langsung.
+- **Modular & Mudah Dikembangkan**: Nilai warna dan sudut servo dapat diubah dengan mudah.
+
+---
+
+## 🛠️ Komponen yang Dibutuhkan
+
+- Arduino Uno
+- Sensor Warna **TCS3200**
+- Motor **Servo SG90** (4x)
+- Layar **LCD I2C** 16x2 atau 20x4
+- **Relay 1 Channel**
+- Sistem konveyor (eksternal)
+- Breadboard, kabel jumper, dan power supply
+
+---
+
+## 🔌 Skema Koneksi (Wiring)
+
+| Komponen              | Pin Arduino   |
+|----------------------|---------------|
+| TCS3200 S0           | `D4`          |
+| TCS3200 S1           | `D5`          |
+| TCS3200 S2           | `D6`          |
+| TCS3200 S3           | `D7`          |
+| TCS3200 OUT          | `D8`          |
+| Servo Merah          | `D9`          |
+| Servo Hijau          | `D10`         |
+| Servo Kuning         | `D2`          |
+| Servo Pink           | `D3`          |
+| Relay Konveyor       | `D12`         |
+| LCD I2C SDA          | `A4`          |
+| LCD I2C SCL          | `A5`          |
+
+---
+
+## 🚀 Instalasi dan Cara Penggunaan
+
+1. **Siapkan Arduino IDE**
+   - Instal versi terbaru Arduino IDE.
+   - Tambahkan library berikut:
+     - `LiquidCrystal_I2C`
+     - `Servo`
+   - Gunakan `Sketch > Include Library > Manage Libraries...` untuk menambahkan jika belum tersedia.
+
+2. **Unggah Kode**
+   - Buka file `.ino` proyek ini di Arduino IDE.
+   - Pilih board: **Arduino Uno**
+   - Pilih port COM yang sesuai.
+   - Klik tombol **Upload** (✔️) untuk mengunggah program.
+
+3. **Rakit & Hubungkan Perangkat Keras**
+   - Hubungkan semua komponen seperti di skema di atas.
+   - Pastikan catu daya cukup dan stabil.
+
+4. **Kalibrasi Warna**
+   - Buka **Serial Monitor** (`Ctrl + Shift + M`) di Arduino IDE.
+   - Letakkan apel di bawah sensor.
+   - Catat nilai `R`, `G`, dan `B` yang muncul.
+   - Sesuaikan ambang batas di bagian kode berikut:
+     ```cpp
+     if (r > 800 && g > 1500 && b < 1800) { ... } // Merah
+     ```
+
+---
+
+## 🧪 Contoh Nilai Kalibrasi
+
+| Warna Apel     | R      | G      | B      |
+|----------------|--------|--------|--------|
+| Merah          | >800   | >1500  | <1800  |
+| Kuning         | >200   | <500   | <600   |
+| Hijau          | >500   | <850   | <1000  |
+| Merah Jambu    | >250   | >700   | <700   |
+
+*Silakan sesuaikan dengan kondisi pencahayaan dan jenis apel.*
+
+---
+
+## ⚙️ Cara Kerja Kode
+
+- **`setup()`**:
+  - Menginisialisasi sensor, LCD, servo, dan relay.
+  - Menampilkan counter pada LCD.
+- **`loop()`**:
+  1. Membaca warna dengan `pulseIn()` dari TCS3200.
+  2. Menentukan warna dan menambah counter.
+  3. Memanggil fungsi `kontrolServo(warna)` untuk membuka gerbang servo dan mematikan konveyor sementara.
+  4. Menyalakan konveyor kembali setelah penyortiran.
+  5. Menampilkan jumlah apel di LCD.
+
+---
+
+## 🤝 Kontribusi
+
+Kontribusi sangat dipersilakan!  
+Silakan buka *issue* atau kirim *pull request* jika Anda menemukan bug atau ingin menambahkan fitur baru.
+
+1. Fork repositori ini
+2. Buat *branch* baru (`git checkout -b fitur/fitur-baru`)
+3. Commit perubahan (`git commit -am 'Tambah fitur baru'`)
+4. Push ke *branch* Anda (`git push origin fitur/fitur-baru`)
+5. Buat *Pull Request* di GitHub
+
+---
+
+## 📜 Lisensi
+
+Lisensi: **MIT License**  
+Bebas digunakan untuk tujuan edukasi maupun komersial.  
+Lihat file `LICENSE` untuk detail lebih lanjut.
