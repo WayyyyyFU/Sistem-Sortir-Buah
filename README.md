@@ -2,10 +2,9 @@
 
 Proyek ini mengimplementasikan sistem otomatis menggunakan Arduino untuk menyortir apel berdasarkan warnanya (Merah, Kuning, Hijau, Merah Jambu) menggunakan sensor warna **TCS3200**, motor **servo** untuk gerbang penyortiran, **relay** untuk konveyor, dan **LCD I2C** untuk menampilkan jumlah apel tersortir secara *real-time*.
 
-![Gambar Proyek Anda Disini](https://via.placeholder.com/600x400.png?text=Letakkan+Foto+Proyek+Anda+di+Sini)  
-*(Contoh gambar: Tampilan alat yang sudah jadi)*
+![Gambar Proyek Anda Disini](https://github.com/WayyyyyFU/Sistem-Sortir-Buah/blob/fcce0d071ed4d47d17c1a1530e60f165817d2a0a/3d.png)  
 
----
+
 
 ## ✨ Fitur Utama
 
