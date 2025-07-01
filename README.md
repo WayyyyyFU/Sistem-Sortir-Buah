@@ -45,6 +45,8 @@ Proyek ini mengimplementasikan sistem otomatis menggunakan Arduino untuk menyort
 | LCD I2C SDA          | `A4`          |
 | LCD I2C SCL          | `A5`          |
 
+![](https://github.com/WayyyyyFU/Sistem-Sortir-Buah/blob/16a76e1b9c74fe2413e9568cfb062217bca2b703/Skema.png) 
+
 ---
 
 ## 🚀 Instalasi dan Cara Penggunaan
