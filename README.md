@@ -1,4 +1,3 @@
-
   🍎 Mesin Penyortir Apel Otomatis
   --------------------------------
   Proyek ini mengimplementasikan sistem otomatis menggunakan Arduino 
@@ -46,6 +45,37 @@
   - Apel Kuning: R > 1000, G > 1700, B < 1600
   - Apel Merah Jambu: R > 1000, G < 1500, B > 1700
  
+ 📜 Cara Penggunaan Kode
+  Untuk menjalankan sistem penyortir apel otomatis dengan benar, ikuti panduan berikut:
+
+  1️⃣ Persiapan Software
+  Pastikan Arduino IDE versi terbaru telah terinstal.
+  Buka Arduino IDE.
+  Tambahkan library berikut jika belum ada:
+  LiquidCrystal_I2C (untuk LCD I2C)
+  Servo (untuk mengontrol motor servo)
+  Tambahkan library melalui Sketch > Include Library > Manage Libraries...
+  
+  2️⃣ Buka dan Unggah Kode
+  Buka file .ino kode proyek ini di Arduino IDE.
+  Pilih board: Arduino Uno
+  Pilih port COM yang sesuai: Tools > Port
+  Klik Upload (✔) untuk mengunggah program ke Arduino.
+
+  3️⃣ Hubungkan Perangkat Keras
+  Rakit dan hubungkan seluruh komponen sesuai dengan bagian 🔌 Wiring (Arduino UNO).
+  Pastikan semua koneksi kabel aman dan tegangan sesuai.
+
+  4️⃣ Gunakan Serial Monitor untuk Kalibrasi
+  Buka Serial Monitor di Arduino IDE (Ctrl + Shift + M
+  Letakkan apel di bawah sensor warna TCS3200 satu per satu.
+  Catat nilai RGB yang muncul di Serial Monitor.
+  Sesuaikan batas RGB di bagian kode ini:
+  
+  if (R > 900 && G > 1500 && B < 1800) {
+  // apel merah
+  }
+
   🤝 Kontribusi:
   Fork, issue, dan pull request dipersilakan!
  
