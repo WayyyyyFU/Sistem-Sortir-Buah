@@ -32,18 +32,18 @@ Proyek ini mengimplementasikan sistem otomatis menggunakan Arduino untuk menyort
 
 | Komponen              | Pin Arduino   |
 |----------------------|---------------|
-| TCS3200 S0           | `D4`          |
-| TCS3200 S1           | `D5`          |
-| TCS3200 S2           | `D6`          |
-| TCS3200 S3           | `D7`          |
-| TCS3200 OUT          | `D8`          |
-| Servo Merah          | `D9`          |
-| Servo Hijau          | `D10`         |
-| Servo Kuning         | `D2`          |
-| Servo Pink           | `D3`          |
-| Relay Konveyor       | `D12`         |
-| LCD I2C SDA          | `A4`          |
-| LCD I2C SCL          | `A5`          |
+| TCS3200 S0           | `4`          |
+| TCS3200 S1           | `5`          |
+| TCS3200 S2           | `6`          |
+| TCS3200 S3           | `7`          |
+| TCS3200 OUT          | `8`          |
+| Servo Merah          | `9`          |
+| Servo Hijau          | `10`         |
+| Servo Kuning         | `2`          |
+| Servo Pink           | `3`          |
+| Relay Konveyor       | `12`         |
+| LCD I2C SDA          | `SDA`          |
+| LCD I2C SCL          | `SLC`          |
 
 ![](https://github.com/WayyyyyFU/Sistem-Sortir-Buah/blob/16a76e1b9c74fe2413e9568cfb062217bca2b703/Skema.png) 
 
